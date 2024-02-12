@@ -28,10 +28,11 @@ import moment from 'moment'
           // handle the response data
 
           console.log(response.data.results[0].lon);
+          console.log(response.data.results[0].lat);
           console.log(response.data.results[0].country)
           console.log(response.data.results[0].city)
           console.log(response.data)
-          const cityFromApi = response.data.results[0].city
+          
           this.cityName = null;
           // console.log(response.data.results[0].datasource.url)
               this.latitude = response.data.results[0].lat

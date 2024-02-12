@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import TodayView from './views/TodayView.vue'
-import TomorrowView from './views/TomorrowView.vue'
 import WeekView from './views/WeekView.vue'
+import TomorrowView from './views/TomorrowView.vue'
 
 
 export default createRouter({
@@ -10,7 +10,8 @@ export default createRouter({
     routes: [
       {
         component: TodayView,
-        path: "/today"
+        path: "/today/:cityName?",
+        name: 'today'
       },
       {
         component: TomorrowView,
@@ -18,7 +19,8 @@ export default createRouter({
       },
       {
         component: WeekView,
-        path: "/week"
+        path: "/week/:cityName?",
+        name: 'week'
       }
     ]
   })

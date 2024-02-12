@@ -1,3 +1,6 @@
 <template>
-    <p>Tomorrow</p>
+
+    <p>
+    Page is under construction...
+    </p>
 </template>

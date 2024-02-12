@@ -1,17 +1,26 @@
+
+<script>
+// import { RouterLink } from 'vue-router'
+
+export default{
+    // data(){
+    // return{
+    //     isDarkMode: false,
+    // }
+    // },
+    // methods: {
+    //     toggleDarkMode(){
+    //         this.isDarkMode = !this.isDarkMode;
+    //         document.body.classList.toggle('dark-mode', this.isDarkMode)
+    //     }
+    //         }
+}
+</script>
+
+
 <template>
-    <body>
-        <header>
-            <nav class="top-nav">
-                <ul>
-                    <!-- <li><router-link to="/">Today</router-link></li>
-                    <li><router-link to="/tomorrow">Tomorrow</router-link></li>
-                    <li><router-link to="/weekly">Weekly</router-link></li> -->
-                    <li>Today</li>
-                    <li>Tomorrow</li>
-                    <li>Weekly</li>
-                </ul>
-                <!-- <div @click="toggleDarkMode"></div> -->
-            <svg class="dark-mode-icon"
+    <nav class="top-nav">
+    <!-- <svg class="dark-mode-icon"
                 @click="toggleDarkMode()"
                 width="24"
                 height="24"
@@ -31,65 +40,30 @@
                     d="M11 0H13V4.06189C12.6724 4.02104 12.3387 4 12 4C11.6613 4 11.3276 4.02104 11 4.06189V0ZM7.0943 5.68018L4.22173 2.80761L2.80752 4.22183L5.6801 7.09441C6.09071 6.56618 6.56608 6.0908 7.0943 5.68018ZM4.06189 11H0V13H4.06189C4.02104 12.6724 4 12.3387 4 12C4 11.6613 4.02104 11.3276 4.06189 11ZM5.6801 16.9056L2.80751 19.7782L4.22173 21.1924L7.0943 18.3198C6.56608 17.9092 6.09071 17.4338 5.6801 16.9056ZM11 19.9381V24H13V19.9381C12.6724 19.979 12.3387 20 12 20C11.6613 20 11.3276 19.979 11 19.9381ZM16.9056 18.3199L19.7781 21.1924L21.1923 19.7782L18.3198 16.9057C17.9092 17.4339 17.4338 17.9093 16.9056 18.3199ZM19.9381 13H24V11H19.9381C19.979 11.3276 20 11.6613 20 12C20 12.3387 19.979 12.6724 19.9381 13ZM18.3198 7.0943L21.1923 4.22183L19.7781 2.80762L16.9056 5.6801C17.4338 6.09071 17.9092 6.56608 18.3198 7.0943Z"
                     fill="currentColor"
                 />
-                    </svg>
-             </nav>
-        </header>
-        <!-- <router-view></router-view> -->
-    </body>
-
+    </svg> -->
+    <ul class="routerlink-container">
+      <li>
+        <RouterLink class="router-link" to="/today">Today</RouterLink>
+      </li>
+      <li>
+        <RouterLink class="router-link" to="/tomorrow">Tomorrow</RouterLink>
+      </li>
+      <li>
+        <RouterLink class="router-link" to="/week">Weekly</RouterLink>
+      </li>
+    </ul>
+  </nav>
 </template>
 
-<script>
-export default{
-    data(){
-        return{
-            isDarkMode: false,
-            // isSpinning: false,
-        }
-    },
-    methods: {
-        toggleDarkMode(){
-            this.isDarkMode = !this.isDarkMode;
-            document.body.classList.toggle('dark-mode', this.isDarkMode)
-            // this.isSpinning = true;
-        }
-            }
-}
-</script>
+<style scoped>
 
-
-<style>
-
-    body{
-        width: 350px;
-    }
-
-    header{
-        background-color: rgb(102, 102, 226);
-        padding: 10px;
-    }
-
-    .top-nav{
-        /* background-color: rgb(102, 102, 226); */
-        display: flex;
-
-    }
-
-    ul{
-        background-color: beige;
-        /* width: 50vw; */
-        display: flex;
-        flex-grow: 1;
-        list-style: none;
-        justify-content: center;
-
-
-    }
-    li{
-        padding: 00 20px
-    }
-
-    .dark-mode-icon:hover{
+/* .today-link-line{
+  margin-top: 2px;
+  width: 45px;
+  height: 1.5px;
+  background-color: black;
+} */
+    /* .dark-mode-icon:hover{
         transform: rotate(-45deg);
         color: rgb(24, 70, 70);
     }
@@ -99,16 +73,13 @@ export default{
        transition: transform .5s ease-in-out;
        /* transform: color(red); */
        /* animation: backwards; */
+    /* } */
 
-    }
-
-    .dark-mode-icon{
+    /* .dark-mode-icon{
         align-items: center ;
         justify-self: center;
         transition: transform .3s ease-in-out;
-        transition: transform .5s ease-in-out;
-
+        transition: transform .5s ease-in-out; */
         /* color: antiquewhite; */
-    }
-
+    /* } */
 </style>

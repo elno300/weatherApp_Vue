@@ -1,136 +1,230 @@
+
+<template>
+    <body>
+      <section>
+    <NavBar />
+    <RouterView />
+    </section>
+  </body>
+</template>
+
 <script>
-  import { RouterLink } from 'vue-router'
-  import CitiesList from './components/CitiesList.vue'
-  import HelloWorld from './components/HelloWorld.vue'
-  import MainLayout from './components/MainLayout.vue'
-  import GetLocation from './components/GetLocation.vue'
+import NavBar from '../src/components/NavBar.vue';
+import { RouterView } from 'vue-router';
 
-  // import Date from './components/Date.vue'
 
-  export default {
-    components: {
-      CitiesList,
-      HelloWorld,
-      MainLayout,
-      GetLocation,
+export default {
+components: {
+  NavBar,
+  RouterView,
+},
+};
 
-    },
-    data(){
-        return{
-            isDarkMode: false,
-        }
-    },
-    methods: {
-        toggleDarkMode(){
-            this.isDarkMode = !this.isDarkMode;
-            document.body.classList.toggle('dark-mode', this.isDarkMode)
-        }
-            }
 
-  }
+// if ("geolocation" in navigator) {
+//   // Prompt user for permission to access their location
+//       navigator.geolocation.getCurrentPosition(
+//     // Success callback function
+//     (position) => {
+//       // Get the user's latitude and longitude coordinates
+//       this.longitude = position.coords.latitude;
+//       this.latitude = position.coords.longitude;
+
+
+//       // Do something with the location data, e.g. display on a map
+//       console.log(`Latitude: ${lat}, longitude: ${lng}`);
+//     }
 
 </script>
 
-<template>
-  <GetLocation></GetLocation>
-  <header>
-  <nav class="top-nav">
-    <svg class="dark-mode-icon"
-                @click="toggleDarkMode()"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                >
-                <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
-                    fill="currentColor"
-                />
-                <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11 0H13V4.06189C12.6724 4.02104 12.3387 4 12 4C11.6613 4 11.3276 4.02104 11 4.06189V0ZM7.0943 5.68018L4.22173 2.80761L2.80752 4.22183L5.6801 7.09441C6.09071 6.56618 6.56608 6.0908 7.0943 5.68018ZM4.06189 11H0V13H4.06189C4.02104 12.6724 4 12.3387 4 12C4 11.6613 4.02104 11.3276 4.06189 11ZM5.6801 16.9056L2.80751 19.7782L4.22173 21.1924L7.0943 18.3198C6.56608 17.9092 6.09071 17.4338 5.6801 16.9056ZM11 19.9381V24H13V19.9381C12.6724 19.979 12.3387 20 12 20C11.6613 20 11.3276 19.979 11 19.9381ZM16.9056 18.3199L19.7781 21.1924L21.1923 19.7782L18.3198 16.9057C17.9092 17.4339 17.4338 17.9093 16.9056 18.3199ZM19.9381 13H24V11H19.9381C19.979 11.3276 20 11.6613 20 12C20 12.3387 19.979 12.6724 19.9381 13ZM18.3198 7.0943L21.1923 4.22183L19.7781 2.80762L16.9056 5.6801C17.4338 6.09071 17.9092 6.56608 18.3198 7.0943Z"
-                    fill="currentColor"
-                />
-    </svg>
-    <ul>
-      <li>
-        <RouterLink to="/today">Today</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/tomorrow">Tomorrow</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/week">Weekly</RouterLink>
-      </li>
-    </ul>
-  </nav>
-</header>
-  <main>
-    <RouterView/>
-  </main>
 
-  <MainLayout></MainLayout>
-  <!-- <Date></Date> -->
+<style >
 
-  <HelloWorld msg="Hello World!" />
-  <!-- <CitiesList/> -->
-</template>
+  body{
+    background-color: aliceblue;
+  }
 
-<style>
+  section{
+      width: 360px;
+      height: 100%;
+      min-height: 100vh;
+      background: rgb(231,248,255);
+      background: linear-gradient(180deg, rgba(231,248,255,1) 0%, rgba(128,206,238,1) 100%, rgba(255,248,57,1) 100%);
+      background-repeat: no-repeat;
+      padding: 0;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 16px;
+  }
 
-body{
-        width: 350px;
-    }
+  .top-nav{
+      display: flex;
+      margin: 0;
+      padding: 0;
+      top: 0;
+      justify-content: center;
+  }
 
-    header{
-        background-color: rgb(102, 102, 226);
-        padding: 10px;
-    }
+  .router-link{
+    text-decoration: none;
+    color: black;
+  }
 
-    .top-nav{
-        /* background-color: rgb(102, 102, 226); */
-        display: flex;
+  .routerlink-container{
+    display: flex;
+    justify-content:space-between;
+    /* align-items: stretch; */
+    /* background-color: red; */
+    width: 70%;
+  }
 
-    }
+  input{
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    height: 28px;
+    width: 70%;
+    margin:0;
+    box-shadow:10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    border: 1px solid #FFF;
+    padding: 4px 20px 4px 15px;
+  }
 
-    ul{
-        background-color: beige;
-        /* width: 50vw; */
-        display: flex;
-        flex-grow: 1;
-        list-style: none;
-        justify-content: center;
+  button{
+    background: rgba(255, 255, 255, 0.719);
+    color: #878787db;
+    margin-left: 10px;
+    margin-right: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+  }
+
+  button:hover{
+    border-color: #FFF;
+    border: solid 1px #FFF;
+  }
+
+  .magnifying-glass{
+    padding-top: 4px;
+    padding-right: 2px;
+  }
+
+  button:hover .magnifying-glass{
+    color: rgb(0, 0, 0);
+    font-size: large;
+    height: 28px;
+    width: 28px;
+  }
+
+  .input-butt-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+  #weather-symbol{
+  width: 100%;
+  height: 100%;
+  }
+
+.weekSymbols{
+    height: 40px;
+    width: 40px;
+  }
+
+  .week-weather-li{
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 15px 00;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding:10px 16px;
+  }
+
+  .week-weather-text-container{
+    flex-grow: 1;
+  }
 
 
-    }
-    li{
-        padding: 00 20px
-    }
+  h4{
+    font-size: 28px;
+    font-weight:lighter;
+    margin: 0;
+    padding: 0;
+  }
 
-    .dark-mode-icon:hover{
-        transform: rotate(-45deg);
-        color: rgb(24, 70, 70);
-    }
+  p, h2, h3, h4, li{
+    font-family: Inter regular, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-    .dark-mode-icon:active{
-       transform: rotate(360deg);
-       transition: transform .5s ease-in-out;
-       /* transform: color(red); */
-       /* animation: backwards; */
+  .day-text{
+    font-size: 14px;
+    margin: 0;
+  }
 
-    }
+@font-face {
+  font-family: Inter regular;
+  src: url(../assets/Font/Inter/static/Inter-Regular.ttf);
+}
 
-    .dark-mode-icon{
-        align-items: center ;
-        justify-self: center;
-        transition: transform .3s ease-in-out;
-        transition: transform .5s ease-in-out;
+.today-weather-symbol-container{
 
-        /* color: antiquewhite; */
-    }
+  width: 60%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.today-symbol-container{
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: center;
+}
+
+.current-city{
+  font-size: 24px;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+
+.current-date{
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.current-temp{
+  font-size: 85px;
+}
+
+
+  /* .dark-mode-icon:hover{
+      transform: rotate(-45deg);
+      color: rgb(24, 70, 70);
+  }
+
+  .dark-mode-icon:active{
+     transform: rotate(360deg);
+     transition: transform .5s ease-in-out;
+  }
+
+  .dark-mode-icon{
+      align-items: center ;
+      justify-self: center;
+      transition: transform .3s ease-in-out;
+      transition: transform .5s ease-in-out;
+  /* } */
 </style>
