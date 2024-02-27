@@ -10,7 +10,7 @@ export default createRouter({
     routes: [
       {
         component: TodayView,
-        path: "/today/:cityName?",
+        path: "/:cityName?",
         name: 'today'
       },
       {

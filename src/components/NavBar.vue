@@ -1,7 +1,5 @@
 
 <script>
-// import { RouterLink } from 'vue-router'
-
 export default{
     // data(){
     // return{
@@ -16,7 +14,6 @@ export default{
     //         }
 }
 </script>
-
 
 <template>
     <nav class="top-nav">
@@ -43,7 +40,7 @@ export default{
     </svg> -->
     <ul class="routerlink-container">
       <li>
-        <RouterLink class="router-link" to="/today">Today</RouterLink>
+        <RouterLink class="router-link" to="/">Today</RouterLink>
       </li>
       <li>
         <RouterLink class="router-link" to="/tomorrow">Tomorrow</RouterLink>
