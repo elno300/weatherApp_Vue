@@ -31,6 +31,7 @@ export default {
         this.inputCityName.trim() !== '' &&
         this.inputCityName !== '/^[a-zA-Z\\s]+$/'
       ) {
+
         axios
           .get(
             `https://api.geoapify.com/v1/geocode/search?city=${this.inputCityName}&state=${this.inputCityName}&country=Sweden&lang=en&limit=1&type=city&format=json&apiKey=58e3667c44f64bc2adfd18a7d67ba5f1`
@@ -62,6 +63,8 @@ export default {
             } else {
               this.$router.push({ name: 'week', params: { cityName: this.cityInfo.city } });
             }
+
+
 
             // cityInfo skickas som object tillsammans med eventet search-location
             this.$emit('search-location', this.cityInfo);

@@ -40,7 +40,7 @@ export default{
     </svg> -->
     <ul class="routerlink-container">
       <li>
-        <RouterLink class="router-link" to="/">Today</RouterLink>
+        <RouterLink class="router-link" :class="{ 'router-link-active': $route.path === '/' }" to="/">Today</RouterLink>
       </li>
       <li>
         <RouterLink class="router-link" to="/tomorrow">Tomorrow</RouterLink>
@@ -53,6 +53,9 @@ export default{
 </template>
 
 <style scoped>
+.router-link-active{
+  border-bottom: 1.2px solid rgb(98, 98, 98);
+}
 
 /* .today-link-line{
   margin-top: 2px;
